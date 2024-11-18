@@ -37,6 +37,7 @@ nav:
   - Deployment: deployment.mkd
   - OpenAPI: openapi/index.html
   - Redoc: redoc/
+  - Swagger: swagger.mkd
 
 plugins:
 - mkdocstrings:
@@ -51,6 +52,10 @@ plugins:
 
 - search:
     lang: en
+
+# pip install mkdocs-render-swagger-plugin
+- render_swagger:
+    allow_arbitrary_locations : true
 
 # Require openapi.json to be hosted via http(s)://
 - redoc-tag
