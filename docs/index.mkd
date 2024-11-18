@@ -5,7 +5,9 @@ hide:
 
 # SSoT API
 
-Labtech SSoT API, intended for internal use.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan, velit in feugiat viverra, nisl purus condimentum orci, nec rhoncus nulla nisi nec erat. Vivamus aliquet vitae libero convallis consectetur. Sed sit amet ante eget elit rhoncus congue. Duis maximus nunc in felis maximus, sit amet posuere massa accumsan. Vivamus ornare ultrices sem non bibendum. Maecenas sit amet turpis faucibus, condimentum ligula suscipit, venenatis tellus. Mauris a maximus ante. Pellentesque lobortis lacinia quam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque tempus semper ultrices.
+
+Vivamus vel mauris vitae massa iaculis fermentum venenatis et justo. Fusce malesuada augue nisl, vitae mattis leo efficitur a. In hac habitasse platea dictumst. Nam aliquet neque eget neque interdum tempus. Phasellus ut iaculis ligula. Suspendisse congue odio sed nisl ullamcorper, vitae cursus dolor pellentesque. Ut bibendum, est vitae molestie mollis, lectus velit euismod tortor, in congue lacus enim et lorem. Proin ex ligula, condimentum tristique massa nec, fermentum eleifend leo. Nullam magna ante, semper id rhoncus eget, commodo id nibh. Pellentesque quis pellentesque sem.
 
 ## Related documentation
 
