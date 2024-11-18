@@ -1,0 +1,209 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "ACME API",
+    "summary": "ACME API, intended for internal use only",
+    "description": "This is the API for the ACME Corporation",
+    "contact": {
+      "slack": "#acme-public"
+    },
+    "version": "0.0.0"
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Root",
+        "operationId": "root__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orb": {
+      "post": {
+        "summary": "Orb",
+        "operationId": "orb_orb_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UrisRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrbResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "OrbRating": {
+        "properties": {
+          "cache_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cache Key"
+          },
+          "content": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Content"
+          },
+          "safety": {
+            "type": "integer",
+            "title": "Safety"
+          },
+          "ttl": {
+            "type": "integer",
+            "title": "Ttl"
+          },
+          "vut": {
+            "type": "integer",
+            "title": "vut",
+            "description": "Valid Until Timestamp, a fixed timestamp in the future",
+            "example": 1731960901
+          }
+        },
+        "type": "object",
+        "required": [
+          "content",
+          "safety",
+          "ttl",
+          "vut"
+        ],
+        "title": "OrbRating"
+      },
+      "OrbResponse": {
+        "additionalProperties": {
+          "$ref": "#/components/schemas/OrbRating"
+        },
+        "type": "object",
+        "title": "OrbResponse",
+        "description": "The response from the Orb API",
+        "example": {
+          "http://cujo.com": {
+            "cache_key": "https://cujo.com",
+            "content": [
+              2,
+              5,
+              306
+            ],
+            "safety": 96,
+            "ttl": 86400,
+            "vut": 1731960901
+          }
+        }
+      },
+      "UrisList": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array",
+        "maxItems": 10,
+        "minItems": 1,
+        "title": "UrisList",
+        "description": "List of URIs to be processed",
+        "example": [
+          "https://cujo.com",
+          "https://cujo.com/privacy"
+        ]
+      },
+      "UrisRequest": {
+        "properties": {
+          "uris": {
+            "$ref": "#/components/schemas/UrisList"
+          }
+        },
+        "type": "object",
+        "required": [
+          "uris"
+        ],
+        "title": "UrisRequest"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}
