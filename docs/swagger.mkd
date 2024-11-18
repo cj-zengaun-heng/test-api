@@ -1,0 +1,1 @@
+!!swagger ssot-openapi.json!!
