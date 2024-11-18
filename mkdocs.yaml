@@ -36,6 +36,7 @@ nav:
   - Reference: reference.mkd
   - Deployment: deployment.mkd
   - OpenAPI: openapi/index.html
+  - Redoc: redoc/
 
 plugins:
 - mkdocstrings:
