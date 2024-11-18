@@ -36,6 +36,7 @@ nav:
   - Reference: reference.mkd
   - Deployment: deployment.mkd
   - OpenAPI: openapi/index.html
+  - Redoc: redoc/index.html
 
 plugins:
 - mkdocstrings:
@@ -52,7 +53,7 @@ plugins:
     lang: en
 
 # Require openapi.json to be hosted via http(s)://
-#- redoc-tag
+- redoc-tag
 
 #- swagger-ui-tag
 
