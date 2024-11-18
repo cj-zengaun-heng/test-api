@@ -21,4 +21,5 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install -r tests/requirements.txt
+      - run: make build-openapi
       - run: mkdocs gh-deploy --force
