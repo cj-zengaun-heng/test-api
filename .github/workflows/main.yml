@@ -9,6 +9,9 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        UNAME_ARCH: [arm64]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
