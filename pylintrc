@@ -1,0 +1,11 @@
+[MESSAGES CONTROL]
+disable=R0801,fixme,missing-docstring,no-else-return,W0702,W0703,wrong-import-order,wrong-import-position,trailing-newlines,too-many-locals
+
+[REPORTS]
+output-format=parseable
+
+[BASIC]
+good-names=i,j,f,k,v,x,y,_,logger
+
+[MASTER]
+init-hook="import os, sys; from pylint.config import find_default_config_files; basepath=os.path.dirname(str(list(find_default_config_files())[0])); sys.path.append(basepath); sys.path.append(basepath+'/app/'); "

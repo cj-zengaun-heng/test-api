@@ -1,0 +1,12 @@
+FROM python:3.13-alpine
+
+ENV PYTHONUNBUFFERED=1
+
+WORKDIR /code
+ADD . /code/
+
+RUN apk add --no-cache build-base libffi-dev make aws-cli git g++ 7zip
+
+RUN pip3 install build --no-cache-dir --disable-pip-version-check --root-user-action=ignore
+RUN pip3 install -r app/requirements.txt --no-cache-dir --disable-pip-version-check --root-user-action=ignore
+RUN pip3 install -r tests/requirements.txt --no-cache-dir --disable-pip-version-check --root-user-action=ignore

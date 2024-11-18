@@ -1,0 +1,16 @@
+---
+hide:
+  - toc
+---
+
+# SSoT API
+
+Labtech SSoT API, intended for internal use.
+
+## Related documentation
+
++ [CUJO.AI Website](https://cujo.com)
+
+## Architecture
+
+1. lorem ipsum.

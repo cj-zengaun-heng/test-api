@@ -1,0 +1,72 @@
+site_name: LabTech SSoT API
+
+theme:
+  name: "material"
+  features:
+    - content.code.copy
+    - content.code.select
+    - navigation.footer
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark modeß
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/git-alt 
+  font:
+    text: Montserrat
+    code: Roboto Mono
+
+
+repo_url: https://github.com/ACME/test-api
+repo_name: ACME/test-api
+
+copyright: Copyright &copy; ACME
+
+nav:
+  - SSoT API: index.mkd
+  - Reference: reference.mkd
+  - Deployment: deployment.mkd
+  - OpenAPI: openapi/index.html
+
+plugins:
+- mkdocstrings:
+    handlers:
+      python:
+        options:
+          docstring_section_style: table
+          ignore_init_summary: true
+          heading_level: 3
+          show_root_full_path: true
+          show_root_members_full_path: true
+
+- search:
+    lang: en
+
+# Require openapi.json to be hosted via http(s)://
+#- redoc-tag
+
+#- swagger-ui-tag
+
+# - openapi_markdown:
+#       enabled: true
+#       openapi_file: docs/ssot-openapi.json
+#       output_file: api_doc.md
+
+# openapi plugin configuration
+- neoteroi.mkdocsoad:
+    use_pymdownx: true
+
+markdown_extensions:
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
